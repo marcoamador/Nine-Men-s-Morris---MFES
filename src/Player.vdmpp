@@ -5,52 +5,97 @@
 --
 class Player
 
+values
+  public TOTAL_PIECES : nat = 9;
+
 instance variables
-  private pieceType : PieceType;
+  private pieceType : Board`PieceType;
   private totalPieces : nat;
   private unplayedPieces : nat;
 
 operations
+
+  public Player : (Board`PieceType) ==> Player
+  Player(type) ==
+  (
+  	pieceType := type;
+  	totalPieces := TOTAL_PIECES;
+  	unplayedPieces := TOTAL_PIECES;
+  )
+  post totalPieces = TOTAL_PIECES and unplayedPieces = TOTAL_PIECES and pieceType = type;
+
   public lost : () ==> bool
   lost() ==
-    is not yet specified;
+  (
+  	return totalPieces < 3;
+  );
 
   public reset : () ==> ()
   reset() ==
-    is not yet specified;
+  (
+  	totalPieces := TOTAL_PIECES;
+  	unplayedPieces := TOTAL_PIECES;
+  )
+  post totalPieces = TOTAL_PIECES and unplayedPieces = TOTAL_PIECES;
 
-  public getPieceType : () ==> PieceType
+  public getPieceType : () ==> Board`PieceType
   getPieceType() ==
-    is not yet specified;
+  (
+  	return pieceType;
+  )
+  pre pieceType <> <UNDEFINED>
+  post RESULT = pieceType;
 
   public decTotalPieces : () ==> ()
   decTotalPieces() ==
-    is not yet specified;
+  (
+  	totalPieces := totalPieces - 1;
+  )
+  pre totalPieces > 0
+  post totalPieces >= 0;
 
   public getTotalPieces : () ==> nat
   getTotalPieces() ==
-    is not yet specified;
+  (
+  	return totalPieces;
+  )
+  post RESULT = totalPieces;
 
   public setTotalPieces : nat ==> ()
   setTotalPieces(nPieces) ==
-    is not yet specified;
+  (
+  	totalPieces := nPieces;
+  )
+  post totalPieces = nPieces;
 
   public decUnplayedPieces : () ==> ()
   decUnplayedPieces() ==
-    is not yet specified;
+  (
+  	unplayedPieces := unplayedPieces - 1;
+  )
+  pre unplayedPieces > 0
+  post unplayedPieces >= 0;
 
   public getUnplayedPieces : () ==> nat
   getUnplayedPieces() ==
-    is not yet specified;
+  (
+  	return unplayedPieces;
+  )
+  post RESULT = unplayedPieces;
 
   public setUnplayedPieces : nat ==> ()
   setUnplayedPieces(nPieces) ==
-    is not yet specified;
+  (
+  	unplayedPieces := nPieces;
+  )
+  post unplayedPieces = nPieces;
 
-  public setPieceType : PieceType ==> ()
-  setPieceType(pieceType) ==
-    is not yet specified;
-
+  public setPieceType : Board`PieceType ==> ()
+  setPieceType(type) ==
+  (
+  	pieceType := type;
+  )
+  post pieceType = type;
 
 end Player
 

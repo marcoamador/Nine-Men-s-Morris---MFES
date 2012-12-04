@@ -8,7 +8,7 @@ class Game
 instance variables
   private board : Board;
   private players : set of Player;
-  private currentPieceType : PieceType;
+  private currentPieceType : Board`PieceType;
 
 operations
   public reset : () ==> ()
@@ -19,9 +19,9 @@ operations
   put(coord) ==
     is not yet specified;
 
-  public getBoard : () ==> board
+  public getBoard : () ==> Board
   getBoard() ==
-    is not yet specified;
+  	return board;
 
   public remove : seq of nat1 ==> ()
   remove(coord) ==
@@ -55,14 +55,25 @@ operations
   movable(dest, origin) ==
     is not yet specified;
 
-  public getCurrentPieceType : () ==> PieceType
+  public getCurrentPieceType : () ==> Board`PieceType
   getCurrentPieceType() ==
-    is not yet specified;
+    return currentPieceType;
 
-  public getUnplayedPieceCount : () ==> map PieceType to nat
+  public getUnplayedPieceCount : () ==> map Board`PieceType to nat
   getUnplayedPieceCount() ==
     is not yet specified;
-
+    
+  public getCurrentPlayer : () ==> Player
+  getCurrentPlayer() ==
+  (
+  	dcl p1 : Player;
+  	for all p in set players do
+  		if p.getPieceType() = currentPieceType
+  		then return p
+  		else p1 := p;
+  	return p1;
+  )
+  post RESULT.getPieceType() = currentPieceType;
 
 end Game
 

@@ -5,38 +5,134 @@
 --
 class Board
 
+types
+  public PieceType = <BLACK> | <WHITE> | <UNDEFINED>
+
 instance variables
   private board : map seq of nat1 to PieceType;
 
 operations
+
+  public Board : () ==> Board
+  Board() ==
+  (
+  	board := {
+  	  [1,1] |-> <UNDEFINED>, [1,4] |-> <UNDEFINED>, [1,7] |-> <UNDEFINED>,
+  	  [2,2] |-> <UNDEFINED>, [2,4] |-> <UNDEFINED>, [2,6] |-> <UNDEFINED>,
+  	  [3,3] |-> <UNDEFINED>, [3,4] |-> <UNDEFINED>, [3,5] |-> <UNDEFINED>,
+  	  [4,1] |-> <UNDEFINED>, [4,2] |-> <UNDEFINED>, [4,3] |-> <UNDEFINED>,
+  	  [4,5] |-> <UNDEFINED>, [4,6] |-> <UNDEFINED>, [4,7] |-> <UNDEFINED>,
+  	  [5,3] |-> <UNDEFINED>, [5,4] |-> <UNDEFINED>, [5,5] |-> <UNDEFINED>,
+  	  [6,2] |-> <UNDEFINED>, [6,4] |-> <UNDEFINED>, [6,6] |-> <UNDEFINED>,
+  	  [7,1] |-> <UNDEFINED>, [7,4] |-> <UNDEFINED>, [7,7] |-> <UNDEFINED>
+  	};
+  );
+
   public reset : () ==> ()
   reset() ==
-    is not yet specified;
+  (
+    board := {
+  	  [1,1] |-> <UNDEFINED>, [1,4] |-> <UNDEFINED>, [1,7] |-> <UNDEFINED>,
+  	  [2,2] |-> <UNDEFINED>, [2,4] |-> <UNDEFINED>, [2,6] |-> <UNDEFINED>,
+  	  [3,3] |-> <UNDEFINED>, [3,4] |-> <UNDEFINED>, [3,5] |-> <UNDEFINED>,
+  	  [4,1] |-> <UNDEFINED>, [4,2] |-> <UNDEFINED>, [4,3] |-> <UNDEFINED>,
+  	  [4,5] |-> <UNDEFINED>, [4,6] |-> <UNDEFINED>, [4,7] |-> <UNDEFINED>,
+  	  [5,3] |-> <UNDEFINED>, [5,4] |-> <UNDEFINED>, [5,5] |-> <UNDEFINED>,
+  	  [6,2] |-> <UNDEFINED>, [6,4] |-> <UNDEFINED>, [6,6] |-> <UNDEFINED>,
+  	  [7,1] |-> <UNDEFINED>, [7,4] |-> <UNDEFINED>, [7,7] |-> <UNDEFINED>
+  	};
+  );
+  
+  public validCoords : seq of nat1 ==> bool
+  validCoords(coord) ==
+  (
+  	return coord in set dom board;
+  );
 
   public remove : seq of nat1 ==> ()
   remove(coord) ==
-    is not yet specified;
+  (
+  	board := board ++ { coord |-> <UNDEFINED> };
+  )
+  pre board(coord) <> <UNDEFINED> and validCoords(coord)
+  post board(coord) = <UNDEFINED>;
 
   public puttable : seq of nat1 ==> bool
   puttable(coord) ==
-    is not yet specified;
+  (
+  	return board(coord) = <UNDEFINED>;
+  )
+  pre validCoords(coord);
 
-  public movable : seq of nat1 * seq of nat1 ==> ()
-  movable(dest, origin) ==
-    is not yet specified;
+  public movable : PieceType * seq of nat1 * seq of nat1 ==> bool
+  movable(currentPlayer, origin, dest) ==
+  (
+  	if board(origin) = currentPlayer and board(dest) = <UNDEFINED>
+  	then return movableHorizontal(origin, dest) or movableVertical(origin, dest)
+  	else return false;
+  )
+  pre validCoords(dest) and validCoords(origin);
+  
+  public movableHorizontal : seq of nat1 * seq of nat1 ==> bool
+  movableHorizontal(origin, dest) ==
+  (
+    if origin(1) = dest(1)
+    then return origin(2) = (dest(2) - 1) or origin(2) = (dest(2) + 1)
+    else return false;
+  )
+  pre validCoords(origin) and validCoords(dest);
+  
+  public movableVertical : seq of nat1 * seq of nat1 ==> bool
+  movableVertical(origin, dest) ==
+  (
+    if origin(2) = dest(2)
+    then return origin(1) = (dest(1) - 1) or origin(1) = (dest(1) + 1)
+    else return false;
+  )
+  pre validCoords(origin) and validCoords(dest);
 
   public put : PieceType * seq of nat1 ==> ()
   put(piece, coord) ==
-    is not yet specified;
+  (
+  	board := board ++ { coord |-> piece };
+  )
+  pre board(coord) = <UNDEFINED> and validCoords(coord)
+  post board(coord) = piece;
 
   public hasMills : PieceType ==> bool
   hasMills(piece) ==
-    is not yet specified;
+  (
+  	dcl coords : set of seq of nat1 := dom ( board :> { piece } );
+	return 
+	       -- horizontal
+	       ( { [1,1] , [1,4], [1,7] } in set coords ) or
+	       ( { [2,2] , [2,4], [2,6] } in set coords ) or
+	       ( { [3,3] , [3,4], [3,5] } in set coords ) or
+	       ( { [5,3] , [5,4], [5,5] } in set coords ) or
+	       ( { [6,2] , [6,4], [6,6] } in set coords ) or
+	       ( { [7,1] , [7,4], [7,7] } in set coords ) or
+	       -- vertical
+	       ( { [1,1] , [4,1], [7,1] } in set coords ) or
+	       ( { [2,2] , [4,2], [6,2] } in set coords ) or
+	       ( { [3,3] , [4,3], [5,3] } in set coords ) or
+	       ( { [3,5] , [4,5], [5,5] } in set coords ) or
+	       ( { [2,6] , [4,6], [6,6] } in set coords ) or
+	       ( { [1,7] , [4,7], [7,7] } in set coords ) or
+	       -- special
+	       ( { [4,1] , [4,2], [4,3] } in set coords ) or
+	       ( { [4,5] , [4,6], [4,7] } in set coords ) or
+	       ( { [1,4] , [2,4], [3,4] } in set coords ) or
+	       ( { [5,4] , [6,4], [7,4] } in set coords );
+  )
+  pre piece <> <UNDEFINED>;
 
   public removable : PieceType * seq of nat1 ==> bool
   removable(currentPlayer, coord) ==
-    is not yet specified;
-
+  (
+  	dcl piece : PieceType := board(coord);
+  	return piece <> <UNDEFINED> and piece <> currentPlayer;
+  )
+  pre currentPlayer <> <UNDEFINED> and validCoords(coord);
 
 end Board
 
