@@ -11,49 +11,111 @@ instance variables
   private currentPieceType : Board`PieceType;
 
 operations
+
+  public Game : () ==> Game
+  Game() ==
+  (
+    board := new Board();
+    currentPieceType := <WHITE>;
+    players := { new Player(<WHITE>), new Player(<BLACK>) };
+  );
+  
   public reset : () ==> ()
   reset() ==
-    is not yet specified;
+  (
+    board := new Board();
+    currentPieceType := <WHITE>;
+    players := { new Player(<WHITE>), new Player(<BLACK>) };
+  );
 
   public put : seq of nat1 ==> bool
   put(coord) ==
-    is not yet specified;
+  (
+    board.put(currentPieceType, coord);
+    return board.hasMills(currentPieceType);
+  );
 
   public getBoard : () ==> Board
   getBoard() ==
+  (
   	return board;
+  );
 
   public remove : seq of nat1 ==> ()
   remove(coord) ==
-    is not yet specified;
+  (
+  	board.remove(coord);
+  );
 
   public isPhaseOne : () ==> bool
   isPhaseOne() ==
-    is not yet specified;
+  (
+    for all p in set players do
+    (
+      if p.getUnplayedPieces() > 0
+      then return true;
+    );
+    return false;
+  );
 
   public isPhaseTwo : () ==> bool
   isPhaseTwo() ==
-    is not yet specified;
+  (
+    for all p in set players do
+    (
+      if p.getUnplayedPieces() > 0
+      then return false;
+    );
+    return true;
+  );
+  
+  public getCurrentPlayer : () ==> Player
+  getCurrentPlayer() ==
+  (
+    dcl player : Player;
+    for all p in set players do
+    (
+      if p.getPieceType() = currentPieceType
+      then player := p;
+    );
+    return player;
+  )
+  pre players <> {}
+  post RESULT in set players;
 
   public move : seq of nat1 * seq of nat1 ==> bool
-  move(dest, origin) ==
-    is not yet specified;
+  move(origin, dest) ==
+  (
+    board.remove(origin);
+    board.put(currentPieceType, dest);
+    return board.hasMills(currentPieceType);
+  );
 
   public puttable : seq of nat1 ==> bool
   puttable(coord) ==
-    is not yet specified;
+  (
+    board.puttable(coord);
+  );
 
   public changePlayer : () ==> ()
   changePlayer() ==
-    is not yet specified;
+  (
+    if currentPieceType = <WHITE>
+    then currentPieceType := <BLACK>
+    else currentPieceType := <WHITE>;
+  );
 
   public removable : seq of nat1 ==> bool
   removable(coord) ==
-    is not yet specified;
+  (
+    return board.removable(currentPieceType, coord);
+  );
 
   public movable : seq of nat1 * seq of nat1 ==> bool
-  movable(dest, origin) ==
-    is not yet specified;
+  movable(origin, dest) ==
+  (
+    return board.movable(currentPieceType, origin, dest);
+  );
 
   public getCurrentPieceType : () ==> Board`PieceType
   getCurrentPieceType() ==
@@ -61,19 +123,16 @@ operations
 
   public getUnplayedPieceCount : () ==> map Board`PieceType to nat
   getUnplayedPieceCount() ==
-    is not yet specified;
-    
-  public getCurrentPlayer : () ==> Player
-  getCurrentPlayer() ==
   (
-  	dcl p1 : Player;
-  	for all p in set players do
-  		if p.getPieceType() = currentPieceType
-  		then return p
-  		else p1 := p;
-  	return p1;
+    dcl count : map Board`PieceType to nat;
+    for all p in set players do
+    (
+      count := count ++ { p.getPieceType() |-> p.getUnplayedPieces() };
+    );
+    return count;
   )
-  post RESULT.getPieceType() = currentPieceType;
+  pre players <> {}
+  post dom RESULT <> {};
 
 end Game
 

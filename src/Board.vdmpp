@@ -6,7 +6,7 @@
 class Board
 
 types
-  public PieceType = <BLACK> | <WHITE> | <UNDEFINED>
+  public PieceType = <BLACK> | <WHITE> | <UNDEFINED>;
 
 instance variables
   private board : map seq of nat1 to PieceType;
