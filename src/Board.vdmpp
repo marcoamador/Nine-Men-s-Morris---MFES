@@ -105,24 +105,24 @@ operations
   	dcl coords : set of seq of nat1 := dom ( board :> { piece } );
 	return 
 	       -- horizontal
-	       ( { [1,1] , [1,4], [1,7] } in set coords ) or
-	       ( { [2,2] , [2,4], [2,6] } in set coords ) or
-	       ( { [3,3] , [3,4], [3,5] } in set coords ) or
-	       ( { [5,3] , [5,4], [5,5] } in set coords ) or
-	       ( { [6,2] , [6,4], [6,6] } in set coords ) or
-	       ( { [7,1] , [7,4], [7,7] } in set coords ) or
+	       ( { [1,1] , [1,4], [1,7] } subset coords ) or
+	       ( { [2,2] , [2,4], [2,6] } subset coords ) or
+	       ( { [3,3] , [3,4], [3,5] } subset coords ) or
+	       ( { [5,3] , [5,4], [5,5] } subset coords ) or
+	       ( { [6,2] , [6,4], [6,6] } subset coords ) or
+	       ( { [7,1] , [7,4], [7,7] } subset coords ) or
 	       -- vertical
-	       ( { [1,1] , [4,1], [7,1] } in set coords ) or
-	       ( { [2,2] , [4,2], [6,2] } in set coords ) or
-	       ( { [3,3] , [4,3], [5,3] } in set coords ) or
-	       ( { [3,5] , [4,5], [5,5] } in set coords ) or
-	       ( { [2,6] , [4,6], [6,6] } in set coords ) or
-	       ( { [1,7] , [4,7], [7,7] } in set coords ) or
+	       ( { [1,1] , [4,1], [7,1] } subset coords ) or
+	       ( { [2,2] , [4,2], [6,2] } subset coords ) or
+	       ( { [3,3] , [4,3], [5,3] } subset coords ) or
+	       ( { [3,5] , [4,5], [5,5] } subset coords ) or
+	       ( { [2,6] , [4,6], [6,6] } subset coords ) or
+	       ( { [1,7] , [4,7], [7,7] } subset coords ) or
 	       -- special
-	       ( { [4,1] , [4,2], [4,3] } in set coords ) or
-	       ( { [4,5] , [4,6], [4,7] } in set coords ) or
-	       ( { [1,4] , [2,4], [3,4] } in set coords ) or
-	       ( { [5,4] , [6,4], [7,4] } in set coords );
+	       ( { [4,1] , [4,2], [4,3] } subset coords ) or
+	       ( { [4,5] , [4,6], [4,7] } subset coords ) or
+	       ( { [1,4] , [2,4], [3,4] } subset coords ) or
+	       ( { [5,4] , [6,4], [7,4] } subset coords );
   )
   pre piece <> <UNDEFINED>;
 
