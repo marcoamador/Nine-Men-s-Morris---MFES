@@ -57,6 +57,7 @@ operations
     );
     return false;
   );
+  pre players <> {}
 
   public isPhaseTwo : () ==> bool
   isPhaseTwo() ==
@@ -68,6 +69,7 @@ operations
     );
     return true;
   );
+  pre players <> {}
   
   public getCurrentPlayer : () ==> Player
   getCurrentPlayer() ==
@@ -124,7 +126,7 @@ operations
   public getUnplayedPieceCount : () ==> map Board`PieceType to nat
   getUnplayedPieceCount() ==
   (
-    dcl count : map Board`PieceType to nat;
+    dcl count : map Board`PieceType to nat := {|->};
     for all p in set players do
     (
       count := count ++ { p.getPieceType() |-> p.getUnplayedPieces() };
@@ -132,9 +134,9 @@ operations
     return count;
   )
   pre players <> {}
-  post dom RESULT <> {};
-
+  post dom RESULT <> {|->};
 end Game
+
 
 
 
