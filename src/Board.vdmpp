@@ -43,6 +43,13 @@ operations
   	};
   );
   
+  public getPiece : seq of nat1 ==> PieceType
+  getPiece(coords) ==
+  (
+    return board(coords);
+  )
+  pre validCoords(coords) and board <> {|->};
+  
   public getBoard : () ==> map seq of nat1 to PieceType
   getBoard() ==
   (
