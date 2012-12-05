@@ -56,8 +56,8 @@ operations
       then return true;
     );
     return false;
-  );
-  pre players <> {}
+  )
+  pre players <> {};
 
   public isPhaseTwo : () ==> bool
   isPhaseTwo() ==
@@ -68,8 +68,8 @@ operations
       then return false;
     );
     return true;
-  );
-  pre players <> {}
+  )
+  pre players <> {};
   
   public getCurrentPlayer : () ==> Player
   getCurrentPlayer() ==
@@ -134,7 +134,7 @@ operations
     return count;
   )
   pre players <> {}
-  post dom RESULT <> {|->};
+  post dom RESULT <> {};
 end Game
 
 
