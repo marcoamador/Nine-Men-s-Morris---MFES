@@ -12,17 +12,31 @@ instance variables
   private pieceType : Board`PieceType;
   private totalPieces : nat;
   private unplayedPieces : nat;
+  private mills : set of set of seq of nat1;
 
 operations
 
   public Player : (Board`PieceType) ==> Player
   Player(type) ==
   (
+    mills := {};
   	pieceType := type;
   	totalPieces := TOTAL_PIECES;
   	unplayedPieces := TOTAL_PIECES;
   )
   post totalPieces = TOTAL_PIECES and unplayedPieces = TOTAL_PIECES and pieceType = type;
+  
+  public setMills : set of set of seq of nat1 ==> ()
+  setMills(m) ==
+  (
+    mills := m;
+  );
+  
+  public getMills : () ==> set of set of seq of nat1
+  getMills() ==
+  (
+    return mills;
+  );
 
   public lost : () ==> bool
   lost() ==

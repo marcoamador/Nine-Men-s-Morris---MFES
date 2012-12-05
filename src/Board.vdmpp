@@ -152,12 +152,55 @@ operations
 	       ( { [5,4] , [6,4], [7,4] } subset coords );
   )
   pre piece <> <UNDEFINED>;
+  
+  public getMills : PieceType ==> set of set of seq of nat1
+  getMills(piece) ==
+  (
+  	dcl coords : set of seq of nat1 := dom ( board :> { piece } );
+  	dcl mills : set of set of seq of nat1 := {};
+	if ( { [1,1] , [1,4], [1,7] } subset coords ) then mills := mills union  { { [1,1] , [1,4], [1,7] } };
+	if ( { [1,1] , [1,4], [1,7] } subset coords ) then mills := mills union  { { [1,1] , [1,4], [1,7] } };
+	if ( { [2,2] , [2,4], [2,6] } subset coords ) then mills := mills union  { { [2,2] , [2,4], [2,6] } };
+	if ( { [3,3] , [3,4], [3,5] } subset coords ) then mills := mills union  { { [3,3] , [3,4], [3,5] } };
+	if ( { [5,3] , [5,4], [5,5] } subset coords ) then mills := mills union  { { [5,3] , [5,4], [5,5] } };
+	if ( { [6,2] , [6,4], [6,6] } subset coords ) then mills := mills union  { { [6,2] , [6,4], [6,6] } };
+	if ( { [7,1] , [7,4], [7,7] } subset coords ) then mills := mills union  { { [7,1] , [7,4], [7,7] } };
+	if ( { [1,1] , [4,1], [7,1] } subset coords ) then mills := mills union  { { [1,1] , [4,1], [7,1] } };
+	if ( { [2,2] , [4,2], [6,2] } subset coords ) then mills := mills union  { { [2,2] , [4,2], [6,2] } };
+	if ( { [3,3] , [4,3], [5,3] } subset coords ) then mills := mills union  { { [3,3] , [4,3], [5,3] } };
+	if ( { [3,5] , [4,5], [5,5] } subset coords ) then mills := mills union  { { [3,5] , [4,5], [5,5] } };
+	if ( { [2,6] , [4,6], [6,6] } subset coords ) then mills := mills union  { { [2,6] , [4,6], [6,6] } };
+	if ( { [1,7] , [4,7], [7,7] } subset coords ) then mills := mills union  { { [1,7] , [4,7], [7,7] } };
+	if ( { [4,1] , [4,2], [4,3] } subset coords ) then mills := mills union  { { [4,1] , [4,2], [4,3] } };
+	if ( { [4,5] , [4,6], [4,7] } subset coords ) then mills := mills union  { { [4,5] , [4,6], [4,7] } };
+	if ( { [1,4] , [2,4], [3,4] } subset coords ) then mills := mills union  { { [1,4] , [2,4], [3,4] } };
+	if ( { [5,4] , [6,4], [7,4] } subset coords ) then mills := mills union  { { [5,4] , [6,4], [7,4] } };
+	return mills;
+  )
+  pre piece <> <UNDEFINED>;
 
   public removable : PieceType * seq of nat1 ==> bool
   removable(currentPlayer, coord) ==
   (
   	dcl piece : PieceType := board(coord);
-  	return piece <> <UNDEFINED> and piece <> currentPlayer;
+  	if piece <> <UNDEFINED> and piece <> currentPlayer
+  	then return removableCheck(currentPlayer, coord)
+  	else return false;
+  )
+  pre currentPlayer <> <UNDEFINED> and validCoords(coord);
+  
+  public removableCheck : PieceType * seq of nat1 ==> bool
+  removableCheck(currentPlayer, coord) ==
+  (
+    dcl player : PieceType;
+    dcl allCoords : set of seq of nat1;
+    dcl millCoords : set of seq of nat1;
+    if currentPlayer = <WHITE>
+    then player := <BLACK>
+    else player := <WHITE>;
+    allCoords := dom ( board :> { player } );
+    millCoords := dunion getMills(player);
+    return coord not in set millCoords or allCoords = millCoords;
   )
   pre currentPlayer <> <UNDEFINED> and validCoords(coord);
 

@@ -31,8 +31,13 @@ operations
   public put : seq of nat1 ==> bool
   put(coord) ==
   (
+    dcl mills : set of set of seq of nat1;
+    dcl player : Player := getCurrentPlayer();
+    dcl pMills : set of set of seq of nat1 := player.getMills();
     board.put(currentPieceType, coord);
-    return board.hasMills(currentPieceType);
+    mills := board.getMills(currentPieceType);
+    player.setMills(mills);
+    return card pMills < card mills;
   );
 
   public getBoard : () ==> Board
@@ -44,7 +49,10 @@ operations
   public remove : seq of nat1 ==> ()
   remove(coord) ==
   (
-  	board.remove(coord);
+    board.remove(coord);
+    changePlayer();
+    getCurrentPlayer().setMills(board.getMills(currentPieceType));
+    changePlayer();
   );
 
   public isPhaseOne : () ==> bool
@@ -89,8 +97,7 @@ operations
   move(origin, dest) ==
   (
     board.remove(origin);
-    board.put(currentPieceType, dest);
-    return board.hasMills(currentPieceType);
+    return put(dest);
   );
 
   public puttable : seq of nat1 ==> bool
