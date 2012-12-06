@@ -45,112 +45,110 @@ oft Word 11.0.0000;}{\info{\title Classe Stack}{\author Jo\'e3o}{\operator Marco
 \par Defini\'e7\'e3o em VDM++ da classe }{\rtlch\fcs1 \af0 \ltrch\fcs0 \lang1030\langfe2070\langnp1030\insrsid9659661 Player}{\rtlch\fcs1 \af0 \ltrch\fcs0 \lang1030\langfe2070\langnp1030\insrsid4287903\charrsid2627744 
 \par }{\rtlch\fcs1 \af0 \ltrch\fcs0 \lang1030\langfe2070\langnp1030\insrsid5257689\charrsid2627744 
 \par }\pard\plain \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid2326162 \shading2000 \rtlch\fcs1 \af2\afs20\alang1025 \ltrch\fcs0 \f2\fs20\lang1024\langfe1024\cgrid\noproof\langnp2070\langfenp2070 {
-\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid9659661 class Player}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid2326162\charrsid2326162  
-\par }\pard \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid4144064 \shading2000 {\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid4144064\charrsid4144064 values
-\par   public TOTAL_PIECES : nat = 9;
+\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid9659661 {\*\cs18\rtlch\af5\ltrch\f5 {\b class} {\i \'50\'6c\'61\'79\'65\'72}}
+\par }\pard \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid4144064 \shading2000 {\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid4144064\charrsid4144064 {\*\cs18\rtlch\af5\ltrch\f5 {\b values}
+\par   {\b public} {\i \'54\'4f\'54\'41\'4c\'5f\'50\'49\'45\'43\'45\'53} : {\b nat} = \'39;
 \par 
-\par instance variables
-\par   private pieceType : Board`PieceType}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid1971905  := <WHITE>}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid4144064\charrsid4144064 ;
-\par   private totalPieces : nat}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14356012  := TOTAL_PIECES}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid4144064\charrsid4144064 ;
-\par   private unplayedPieces : nat}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14356012  }{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid1971905 := TOTAL_PIECES}{\rtlch\fcs1 \af2 \ltrch\fcs0 
-\lang1024\langfe1024\langnp2057\insrsid4144064\charrsid4144064 ;
-\par   private mills : set of set of seq of nat1}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid1971905  := \{\}}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid4144064\charrsid4144064 ;
-\par   inv pieceType <> <UNDEFINED>;
-\par   inv totalPieces >= 0;
-\par   inv unplayedPieces >= 0;
+\par {\b instance} {\b variables}
+\par   {\b private} {\i \'70\'69\'65\'63\'65\'54\'79\'70\'65} : {\i \'42\'6f\'61\'72\'64}`{\i \'50\'69\'65\'63\'65\'54\'79\'70\'65} := <\'57\'48\'49\'54\'45>;
+\par   {\b private} {\i \'74\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73} : {\b nat} := {\i \'54\'4f\'54\'41\'4c\'5f\'50\'49\'45\'43\'45\'53};
+\par   {\b private} {\i \'75\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73} : {\b nat} := {\i \'54\'4f\'54\'41\'4c\'5f\'50\'49\'45\'43\'45\'53};
+\par   {\b private} {\i \'6d\'69\'6c\'6c\'73} : {\b set} {\b of} {\b set} {\b of} {\b seq} {\b of} {\b nat1} := \{\};
+\par   {\b inv} {\i \'70\'69\'65\'63\'65\'54\'79\'70\'65} <> <\'55\'4e\'44\'45\'46\'49\'4e\'45\'44>;
+\par   {\b inv} {\i \'74\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73} >= \'30;
+\par   {\b inv} {\i \'75\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73} >= \'30;
 \par 
-\par operations
+\par {\b operations}
 \par 
-\par   public Player : (Board`PieceType) ==> Player
-\par   Player(type) ==
+\par   {\b public} {\i \'50\'6c\'61\'79\'65\'72} : ({\i \'42\'6f\'61\'72\'64}`{\i \'50\'69\'65\'63\'65\'54\'79\'70\'65}) ==> {\i \'50\'6c\'61\'79\'65\'72}
+\par   {\i \'50\'6c\'61\'79\'65\'72}({\i \'74\'79\'70\'65}) ==
 \par   (
-\par     mills := \{\};
-\par   \tab pieceType := type;
-\par   \tab totalPieces := TOTAL_PIECES;
-\par   \tab unplayedPieces := TOTAL_PIECES;
+\par     {\i \'6d\'69\'6c\'6c\'73} := \{\};
+\par    {\i \'70\'69\'65\'63\'65\'54\'79\'70\'65} := {\i \'74\'79\'70\'65};
+\par    {\i \'74\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73} := {\i \'54\'4f\'54\'41\'4c\'5f\'50\'49\'45\'43\'45\'53};
+\par    {\i \'75\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73} := {\i \'54\'4f\'54\'41\'4c\'5f\'50\'49\'45\'43\'45\'53};
 \par   )
-\par   pre type <> <UNDEFINED>;
-\par   
-\par   public setMills : set of set of seq of nat1 ==> ()
-\par   setMills(m) ==
+\par   {\b pre} {\i \'74\'79\'70\'65} <> <\'55\'4e\'44\'45\'46\'49\'4e\'45\'44>;
+\par 
+\par   {\b public} {\i \'73\'65\'74\'4d\'69\'6c\'6c\'73} : {\b set} {\b of} {\b set} {\b of} {\b seq} {\b of} {\b nat1} ==> ()
+\par   {\i \'73\'65\'74\'4d\'69\'6c\'6c\'73}({\i \'6d}) ==
 \par   (
-\par     mills := m;
-\par   );
-\par   
-\par   public getMills : () ==> set of set of seq of nat1
-\par   getMills() ==
-\par   (
-\par     return mills;
+\par     {\i \'6d\'69\'6c\'6c\'73} := {\i \'6d};
 \par   );
 \par 
-\par   public lost : () ==> bool
-\par   lost() ==
+\par   {\b public} {\i \'67\'65\'74\'4d\'69\'6c\'6c\'73} : () ==> {\b set} {\b of} {\b set} {\b of} {\b seq} {\b of} {\b nat1}
+\par   {\i \'67\'65\'74\'4d\'69\'6c\'6c\'73}() ==
 \par   (
-\par   \tab return totalPieces < 3;
+\par     {\b return} {\i \'6d\'69\'6c\'6c\'73};
 \par   );
 \par 
-\par   public reset : () ==> ()
-\par   reset() ==
+\par   {\b public} {\i \'6c\'6f\'73\'74} : () ==> {\b bool}
+\par   {\i \'6c\'6f\'73\'74}() ==
 \par   (
-\par   \tab totalPieces := TOTAL_PIECES;
-\par   \tab unplayedPieces := TOTAL_PIECES;
+\par    {\b return} {\i \'74\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73} < \'33;
 \par   );
 \par 
-\par   public getPieceType : () ==> Board`PieceType
-\par   getPieceType() ==
+\par   {\b public} {\i \'72\'65\'73\'65\'74} : () ==> ()
+\par   {\i \'72\'65\'73\'65\'74}() ==
 \par   (
-\par   \tab return pieceType;
-\par   )
-\par   pre pieceType <> <UNDEFINED>;
-\par 
-\par   public decTotalPieces : () ==> ()
-\par   decTotalPieces() ==
-\par   (
-\par   \tab totalPieces := totalPieces - 1;
-\par   )
-\par   pre totalPieces - 1 >= 0;
-\par 
-\par   public getTotalPieces : () ==> nat
-\par   getTotalPieces() ==
-\par   (
-\par   \tab return totalPieces;
+\par    {\i \'74\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73} := {\i \'54\'4f\'54\'41\'4c\'5f\'50\'49\'45\'43\'45\'53};
+\par    {\i \'75\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73} := {\i \'54\'4f\'54\'41\'4c\'5f\'50\'49\'45\'43\'45\'53};
 \par   );
 \par 
-\par   public setTotalPieces : nat ==> ()
-\par   setTotalPieces(nPieces) ==
+\par   {\b public} {\i \'67\'65\'74\'50\'69\'65\'63\'65\'54\'79\'70\'65} : () ==> {\i \'42\'6f\'61\'72\'64}`{\i \'50\'69\'65\'63\'65\'54\'79\'70\'65}
+\par   {\i \'67\'65\'74\'50\'69\'65\'63\'65\'54\'79\'70\'65}() ==
 \par   (
-\par   \tab totalPieces := nPieces;
+\par    {\b return} {\i \'70\'69\'65\'63\'65\'54\'79\'70\'65};
 \par   )
-\par   pre nPieces >= 0;
+\par   {\b pre} {\i \'70\'69\'65\'63\'65\'54\'79\'70\'65} <> <\'55\'4e\'44\'45\'46\'49\'4e\'45\'44>;
 \par 
-\par   public decUnplayedPieces : () ==> ()
-\par   decUnplayedPieces() ==
+\par   {\b public} {\i \'64\'65\'63\'54\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73} : () ==> ()
+\par   {\i \'64\'65\'63\'54\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73}() ==
 \par   (
-\par   \tab unplayedPieces := unplayedPieces - 1;
+\par    {\i \'74\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73} := {\i \'74\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73} - \'31;
 \par   )
-\par   pre unplayedPieces - 1 >= 0;
+\par   {\b pre} {\i \'74\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73} - \'31 >= \'30;
 \par 
-\par   public getUnplayedPieces : () ==> nat
-\par   getUnplayedPieces() ==
+\par   {\b public} {\i \'67\'65\'74\'54\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73} : () ==> {\b nat}
+\par   {\i \'67\'65\'74\'54\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73}() ==
 \par   (
-\par   \tab return unplayedPieces;
+\par    {\b return} {\i \'74\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73};
 \par   );
 \par 
-\par   public setUnplayedPieces : nat ==> ()
-\par   setUnplayedPieces(nPieces) ==
+\par   {\b public} {\i \'73\'65\'74\'54\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73} : {\b nat} ==> ()
+\par   {\i \'73\'65\'74\'54\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73}({\i \'6e\'50\'69\'65\'63\'65\'73}) ==
 \par   (
-\par   \tab unplayedPieces := nPieces;
+\par    {\i \'74\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73} := {\i \'6e\'50\'69\'65\'63\'65\'73};
 \par   )
-\par   pre nPieces >= 0;
+\par   {\b pre} {\i \'6e\'50\'69\'65\'63\'65\'73} >= \'30;
 \par 
-\par   public setPieceType : Board`PieceType ==> ()
-\par   setPieceType(type) ==
+\par   {\b public} {\i \'64\'65\'63\'55\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73} : () ==> ()
+\par   {\i \'64\'65\'63\'55\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73}() ==
 \par   (
-\par   \tab pieceType := type;
+\par    {\i \'75\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73} := {\i \'75\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73} - \'31;
 \par   )
-\par   pre type <> <UNDEFINED>;}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid2326162\charrsid4144064 
-\par }\pard \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid2326162 \shading2000 {\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid2326162\charrsid4144064 end }{\rtlch\fcs1 \af2 
-\ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid4405599\charrsid4144064 Player}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid4287903\charrsid4144064 
+\par   {\b pre} {\i \'75\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73} - \'31 >= \'30;
+\par 
+\par   {\b public} {\i \'67\'65\'74\'55\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73} : () ==> {\b nat}
+\par   {\i \'67\'65\'74\'55\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73}() ==
+\par   (
+\par    {\b return} {\i \'75\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73};
+\par   );
+\par 
+\par   {\b public} {\i \'73\'65\'74\'55\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73} : {\b nat} ==> ()
+\par   {\i \'73\'65\'74\'55\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73}({\i \'6e\'50\'69\'65\'63\'65\'73}) ==
+\par   (
+\par    {\i \'75\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73} := {\i \'6e\'50\'69\'65\'63\'65\'73};
+\par   )
+\par   {\b pre} {\i \'6e\'50\'69\'65\'63\'65\'73} >= \'30;
+\par 
+\par   {\b public} {\i \'73\'65\'74\'50\'69\'65\'63\'65\'54\'79\'70\'65} : {\i \'42\'6f\'61\'72\'64}`{\i \'50\'69\'65\'63\'65\'54\'79\'70\'65} ==> ()
+\par   {\i \'73\'65\'74\'50\'69\'65\'63\'65\'54\'79\'70\'65}({\i \'74\'79\'70\'65}) ==
+\par   (
+\par    {\i \'70\'69\'65\'63\'65\'54\'79\'70\'65} := {\i \'74\'79\'70\'65};
+\par   )
+\par   {\b pre} {\i \'74\'79\'70\'65} <> <\'55\'4e\'44\'45\'46\'49\'4e\'45\'44>;}
+\par }\pard \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid2326162 \shading2000 {\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid2326162\charrsid4144064 {\*\cs18\rtlch\af5\ltrch\f5 {\b end} {\i \'50\'6c\'61\'79\'65\'72}}
 \par }\pard\plain \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 \fs20\lang1033\langfe2070\cgrid\langnp1033\langfenp2070 {\rtlch\fcs1 \af0 \ltrch\fcs0 
 \lang2057\langfe2070\langnp2057\insrsid4287903\charrsid4144064 
 \par }\pard\plain \ltrpar\s3\ql \li0\ri0\sb240\sa60\keepn\widctlpar\wrapdefault\aspalpha\aspnum\faauto\outlinelevel2\adjustright\rin0\lin0\itap0\pararsid11078918 \rtlch\fcs1 \ab\af1\afs26\alang1025 \ltrch\fcs0 
@@ -158,7 +156,42 @@ oft Word 11.0.0000;}{\info{\title Classe Stack}{\author Jo\'e3o}{\operator Marco
 \par }\pard\plain \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid11078918 \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 \fs20\lang1033\langfe2070\cgrid\langnp1033\langfenp2070 {\rtlch\fcs1 \af0 \ltrch\fcs0 
 \lang2070\langfe2070\langnp2070\insrsid11078918\charrsid11157700 
 \par }\pard\plain \ltrpar\s20\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid11078918 \shading2000 \rtlch\fcs1 \af2\afs20\alang1025 \ltrch\fcs0 \f2\fs20\lang1024\langfe1024\cgrid\noproof\langnp2070\langfenp2070 {
-\rtlch\fcs1 \af2 \ltrch\fcs0 \insrsid9659661 Player}{\rtlch\fcs1 \af2 \ltrch\fcs0 \insrsid11078918\charrsid11157700 
+\rtlch\fcs1 \af2 \ltrch\fcs0 \insrsid9659661 
+\trowd \trgaph108\trrh112\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw30\brdrcf1 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx4536\clvertalt\clbrdrt\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx5529\clvertalt\clbrdrt\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx6663\pard\plain 
+\nowidctlpar\widctlpar\intbl\adjustright \fs20\cgrid {\b\i name\cell #calls\cell coverage\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\i\fs24\lang1030 \row }
+\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \clvertalt\clbrdrl
+\brdrs\brdrw10 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx4536\clvertalt\cltxlrtb \cellx5529\clvertalt\clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx6663\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24 \'50\'6c\'61\'79\'65\'72`\'6c\'6f\'73\'74 \cell  1 \cell 100%\cell}\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24\lang1030 \row }\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24 \'50\'6c\'61\'79\'65\'72`\'72\'65\'73\'65\'74 \cell  1 \cell 100%\cell}\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24\lang1030 \row }\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24 \'50\'6c\'61\'79\'65\'72`\'50\'6c\'61\'79\'65\'72 \cell  5 \cell 100%\cell}\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24\lang1030 \row }\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24 \'50\'6c\'61\'79\'65\'72`\'67\'65\'74\'4d\'69\'6c\'6c\'73 \cell  2 \cell 100%\cell}\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24\lang1030 \row }\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24 \'50\'6c\'61\'79\'65\'72`\'73\'65\'74\'4d\'69\'6c\'6c\'73 \cell  1 \cell 100%\cell}\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24\lang1030 \row }\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24 \'50\'6c\'61\'79\'65\'72`\'67\'65\'74\'50\'69\'65\'63\'65\'54\'79\'70\'65 \cell  4 \cell 100%\cell}\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24\lang1030 \row }\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24 \'50\'6c\'61\'79\'65\'72`\'73\'65\'74\'50\'69\'65\'63\'65\'54\'79\'70\'65 \cell  1 \cell 100%\cell}\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24\lang1030 \row }\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24 \'50\'6c\'61\'79\'65\'72`\'64\'65\'63\'54\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73 \cell  1 \cell 100%\cell}\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24\lang1030 \row }\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24 \'50\'6c\'61\'79\'65\'72`\'67\'65\'74\'54\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73 \cell  7 \cell 100%\cell}\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24\lang1030 \row }\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24 \'50\'6c\'61\'79\'65\'72`\'73\'65\'74\'54\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73 \cell  3 \cell 100%\cell}\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24\lang1030 \row }\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24 \'50\'6c\'61\'79\'65\'72`\'64\'65\'63\'55\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73 \cell  1 \cell 100%\cell}\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24\lang1030 \row }\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24 \'50\'6c\'61\'79\'65\'72`\'67\'65\'74\'55\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73 \cell  6 \cell 100%\cell}\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24\lang1030 \row }\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24 \'50\'6c\'61\'79\'65\'72`\'73\'65\'74\'55\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73 \cell  2 \cell 100%\cell}\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24\lang1030 \row }\pard
+\nowidctlpar\widctlpar\intbl\adjustright \fs20\cgrid {\b\i\fs24\lang1030 total\cell \cell 100% \cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\i\fs24\lang1030 \row } \pard
+\nowidctlpar\widctlpar\adjustright{
+\par }
 \par }\pard\plain \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 \fs20\lang1033\langfe2070\cgrid\langnp1033\langfenp2070 {\rtlch\fcs1 \af0 \ltrch\fcs0 
 \lang2070\langfe2070\langnp2070\insrsid11078918\charrsid11157700 
 \par }}

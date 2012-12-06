@@ -1,13 +1,12 @@
 class Player
-
 values
   public TOTAL_PIECES : nat = 9;
 
 instance variables
-  private pieceType : Board`PieceType;
-  private totalPieces : nat;
-  private unplayedPieces : nat;
-  private mills : set of set of seq of nat1;
+  private pieceType : Board`PieceType := <WHITE>;
+  private totalPieces : nat := TOTAL_PIECES;
+  private unplayedPieces : nat := TOTAL_PIECES;
+  private mills : set of set of seq of nat1 := {};
   inv pieceType <> <UNDEFINED>;
   inv totalPieces >= 0;
   inv unplayedPieces >= 0;
@@ -102,6 +101,7 @@ operations
   	pieceType := type;
   )
   pre type <> <UNDEFINED>;
+
 
 end Player
 

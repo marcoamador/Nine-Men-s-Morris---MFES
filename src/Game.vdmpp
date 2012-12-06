@@ -6,9 +6,9 @@
 class Game
 
 instance variables
-  private board : Board;
-  private players : set of Player;
-  private currentPieceType : Board`PieceType;
+  private board : Board := new Board();
+  private players : set of Player := {};
+  private currentPieceType : Board`PieceType := <WHITE>;
   inv currentPieceType <> <UNDEFINED>
 
 operations

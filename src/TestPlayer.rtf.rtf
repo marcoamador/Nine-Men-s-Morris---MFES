@@ -48,106 +48,88 @@
 \lang1030\langfe2070\langnp1030\insrsid4666101 , para testar a classe Player}{\rtlch\fcs1 \af0 \ltrch\fcs0 \lang1030\langfe2070\langnp1030\insrsid4287903\charrsid2627744 
 \par }{\rtlch\fcs1 \af0 \ltrch\fcs0 \lang1030\langfe2070\langnp1030\insrsid5257689\charrsid2627744 
 \par }\pard\plain \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid91024 \shading2000 \rtlch\fcs1 \af2\afs20\alang1025 \ltrch\fcs0 \f2\fs20\lang1024\langfe1024\cgrid\noproof\langnp2070\langfenp2070 {
-\rtlch\fcs1 \af2 \ltrch\fcs0 \insrsid9659661\charrsid91024 class }{\rtlch\fcs1 \af2 \ltrch\fcs0 \insrsid4666101\charrsid91024 Test}{\rtlch\fcs1 \af2 \ltrch\fcs0 \insrsid9659661\charrsid91024 Player}{\rtlch\fcs1 \af2 \ltrch\fcs0 
-\insrsid2326162\charrsid91024  
-\par }{\rtlch\fcs1 \af2 \ltrch\fcs0 \insrsid7487507\charrsid91024 
-\par operations
-\par \tab -- opera\'e7\'e3o auxiliar, que tira partido do facto do 
-\par \tab -- interpretador parar quando se viola uma pr\'e9-condi\'e7\'e3o
-\par \tab }{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid7487507\charrsid91024 public AssertTrue : bool ==> ()
-\par \tab AssertTrue(a) == return 
-\par       }{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid7487507\charrsid5971575 pre a;}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid7487507 
-\par }{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid15694333 
-\par \tab public AssertFalse : bool ==> ()
-\par \tab AssertFalse(a) == return
-\par \tab pre not a;}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid15694333\charrsid5971575 
-\par }{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid2046799\charrsid5971575 
-\par \tab public TestInitialPieces : () ==> ()
-\par \tab TestInitialPieces() ==
-\par \tab (
-\par \tab \tab }{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid2046799\charrsid2046799 dcl p: Player := new Player(}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid2823800 <WHITE>}{\rtlch\fcs1 \af2 \ltrch\fcs0 
-\lang1024\langfe1024\langnp2057\insrsid2046799\charrsid2046799 );}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid15694333 
-\par }\pard \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid4467856 \shading2000 {\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid4467856 \tab \tab AssertTrue(p.getTotalPieces() = 9);
-
-\par \tab \tab AssertTrue(p.getUnplayedPieces() = 9);
-\par \tab \tab p.decTotalPieces();
-\par \tab \tab AssertTrue(p.getTotalPieces() = 8);
-\par \tab \tab p.setTotalPieces(5);
-\par \tab \tab AssertTrue(p.getTotalPieces() = 5);
-\par \tab \tab p.setUnplayedPieces(3);
-\par \tab \tab AssertTrue(p.getUnplayedPieces() = 3);
-\par \tab \tab p.decUnplayedPieces();
-\par \tab \tab AssertTrue(p.getUnplayedPieces() = 2);
-\par }\pard \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid91024 \shading2000 {\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid15694333 \tab \tab return
-\par }{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid2046799       );}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid13245581 
-\par }{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid15694333 
-\par \tab public TestReset : () ==> ()
-\par \tab TestReset() ==
-\par \tab (
-\par }\pard \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid15694333 \shading2000 {\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid15694333 \tab \tab }{\rtlch\fcs1 \af2 \ltrch\fcs0 
-\lang1024\langfe1024\langnp2057\insrsid15694333\charrsid2046799 dcl p}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14241465  }{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid15694333\charrsid2046799 : Player 
-:= new Player(}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid15694333 <WHITE>}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid15694333\charrsid2046799 );
-\par }{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid15694333 \tab \tab AssertTrue(p.getTotalPieces() = 9);
-\par \tab \tab AssertTrue(p.getUnplayedPieces() = 9);
-\par }\pard \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid91024 \shading2000 {\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid15694333 \tab \tab p.setTotalPieces(5);
-\par }\pard \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid15694333 \shading2000 {\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid15694333 \tab \tab p.setUnplayedPieces(5);
-\par \tab \tab AssertTrue(p.getTotalPieces() = 5);
-\par \tab \tab AssertTrue(p.getUnplayedPieces() = 5);
-\par \tab \tab p.reset();
-\par \tab \tab AssertTrue(p.getTotalPieces() = Player`TOTAL_PIECES);
-\par }\pard \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid91024 \shading2000 {\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid15694333 \tab \tab 
-AssertTrue(p.getUnplayedPieces() = Player`TOTAL_PIECES);
-\par \tab \tab return
-\par \tab );
-\par }{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14241465 \tab 
-\par \tab public TestHasLost : () ==> ()
-\par \tab TestHasLost() ==
-\par \tab (\tab 
-\par \tab \tab }{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14241465\charrsid2046799 dcl p}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14241465  }{\rtlch\fcs1 \af2 \ltrch\fcs0 
-\lang1024\langfe1024\langnp2057\insrsid14241465\charrsid2046799 : Player := new Player(}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14241465 <BLACK>}{\rtlch\fcs1 \af2 \ltrch\fcs0 
-\lang1024\langfe1024\langnp2057\insrsid14241465\charrsid2046799 );}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14241465 
-\par }\pard \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid14241465 \shading2000 {\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14241465 \tab \tab 
-AssertTrue(p.getTotalPieces() = 9);
-\par }\pard \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid91024 \shading2000 {\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14241465 \tab \tab p.setTotalPieces(2);
-\par }{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid1527803 \tab \tab AssertTrue(p.lost()}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14241465 );
-\par \tab \tab return
-\par \tab );
+\rtlch\fcs1 \af2 \ltrch\fcs0 \insrsid9659661\charrsid91024 {\*\cs18\rtlch\af5\ltrch\f5 {\b class} {\i \'54\'65\'73\'74\'50\'6c\'61\'79\'65\'72}
 \par 
-\par \tab public TestPieceType : () ==> ()
-\par \tab TestPieceType() ==
-\par \tab (
-\par \tab \tab dcl p : Player := new Player(<BLACK}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid2235350 >}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14241465 );}{\rtlch\fcs1 \af2 \ltrch\fcs0 
-\lang1024\langfe1024\langnp2057\insrsid10450830 
-\par }{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid16524063 \tab \tab AssertFalse(p.getPieceType() = <UNDEFINED>);
-\par }{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14241465 \tab \tab }{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14577971 AssertTrue(p.getPieceType}{\rtlch\fcs1 \af2 \ltrch\fcs0 
-\lang1024\langfe1024\langnp2057\insrsid10773186 ()}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14577971  =}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14241465  }{\rtlch\fcs1 \af2 \ltrch\fcs0 
-\lang1024\langfe1024\langnp2057\insrsid8023591 <}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14241465 BLACK>);
-\par \tab \tab p.setPieceType(<WHITE>);
-\par }\pard \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid14241465 \shading2000 {\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14577971 \tab \tab AssertTrue(p.getPieceType}{
-\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid13782947 () }{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid10773186 =}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14241465  <WHITE>);}{
-\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14241465\charrsid2046799 
-\par }\pard \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid91024 \shading2000 {\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14241465 \tab \tab return
-\par \tab );
-\par }{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid10227846 
-\par \tab public TestPlayerMills : () ==> ()
-\par \tab TestPlayerMills() ==
-\par \tab (
-\par \tab \tab dcl p : Player := new Player(<BLACK>);
-\par \tab \tab dcl m : set of set of seq of nat1 := \{\{}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid10227846\charrsid16712290 [5,4] , [6,4], [7,4] \}}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid10227846 \};
-
-\par \tab \tab AssertTrue(p.getPieceType() = <BLACK>);
-\par \tab \tab AssertTrue(p.getMills() = \{\});
-\par \tab \tab p.setMills(m);
-\par \tab \tab AssertTrue(p.getMi}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid16066575 l}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid10227846 ls() = \{\{}{\rtlch\fcs1 \af2 \ltrch\fcs0 
-\lang1024\langfe1024\langnp2057\insrsid10227846\charrsid16712290 [5,4] , [6,4], [7,4] \}}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid10227846 \});
-\par }{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid3885043 \tab \tab return
-\par \tab );
-\par }{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid10227846 \tab \tab 
-\par \tab \tab }{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid10227846\charrsid2046799 
-\par }{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid4666101\charrsid2046799 
-\par }{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid2326162\charrsid13245581 end }{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid4666101\charrsid13245581 Test}{\rtlch\fcs1 \af2 \ltrch\fcs0 
-\lang1024\langfe1024\langnp2057\insrsid2326162\charrsid13245581 P}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid4666101\charrsid13245581 layer}{\rtlch\fcs1 \af2 \ltrch\fcs0 
-\lang1024\langfe1024\langnp2057\insrsid4287903\charrsid13245581 
+\par {\b operations}
+\par  --\'20\'6f\'70\'65\'72\'61\'5b\'5b\'63\'63\'65\'64\'69\'6c\'6c\'61\'5d\'5d\'5b\'5b\'61\'74\'69\'6c\'64\'65\'5d\'5d\'6f\'20\'61\'75\'78\'69\'6c\'69\'61\'72\'2c\'20\'71\'75\'65\'20\'74\'69\'72\'61\'20\'70\'61\'72\'74\'69\'64\'6f\'20\'64\'6f\'20\'66\'61\'63\'74\'6f\'20\'64\'6f\'20
+\par  --\'20\'69\'6e\'74\'65\'72\'70\'72\'65\'74\'61\'64\'6f\'72\'20\'70\'61\'72\'61\'72\'20\'71\'75\'61\'6e\'64\'6f\'20\'73\'65\'20\'76\'69\'6f\'6c\'61\'20\'75\'6d\'61\'20\'70\'72\'5b\'5b\'65\'61\'63\'75\'74\'65\'5d\'5d\'2d\'63\'6f\'6e\'64\'69\'5b\'5b\'63\'63\'65\'64\'69\'6c\'6c\'61\'5d\'5d\'5b\'5b\'61\'74\'69\'6c\'64\'65\'5d\'5d\'6f
+\par  {\b public} {\i \'41\'73\'73\'65\'72\'74\'54\'72\'75\'65} : {\b bool} ==> ()
+\par  {\i \'41\'73\'73\'65\'72\'74\'54\'72\'75\'65}({\i \'61}) == {\b return}
+\par       {\b pre} {\i \'61};
+\par 
+\par  {\b public} {\i \'41\'73\'73\'65\'72\'74\'46\'61\'6c\'73\'65} : {\b bool} ==> ()
+\par  {\i \'41\'73\'73\'65\'72\'74\'46\'61\'6c\'73\'65}({\i \'61}) == {\b return}
+\par  {\b pre} {\b not} {\i \'61};
+\par 
+\par  {\b public} {\i \'54\'65\'73\'74\'49\'6e\'69\'74\'69\'61\'6c\'50\'69\'65\'63\'65\'73} : () ==> ()
+\par  {\i \'54\'65\'73\'74\'49\'6e\'69\'74\'69\'61\'6c\'50\'69\'65\'63\'65\'73}() ==
+\par  (
+\par   {\b dcl} {\i \'70}: {\i \'50\'6c\'61\'79\'65\'72} := {\b new} {\i \'50\'6c\'61\'79\'65\'72}(<\'57\'48\'49\'54\'45>);}
+\par }\pard \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid4467856 \shading2000 {\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid4467856 \tab{\*\cs18\rtlch\af5\ltrch\f5   {\i \'41\'73\'73\'65\'72\'74\'54\'72\'75\'65}({\i \'70}.{\i \'67\'65\'74\'54\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73}() = \'39);
+\par   {\i \'41\'73\'73\'65\'72\'74\'54\'72\'75\'65}({\i \'70}.{\i \'67\'65\'74\'55\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73}() = \'39);
+\par   {\i \'70}.{\i \'64\'65\'63\'54\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73}();
+\par   {\i \'41\'73\'73\'65\'72\'74\'54\'72\'75\'65}({\i \'70}.{\i \'67\'65\'74\'54\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73}() = \'38);
+\par   {\i \'70}.{\i \'73\'65\'74\'54\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73}(\'35);
+\par   {\i \'41\'73\'73\'65\'72\'74\'54\'72\'75\'65}({\i \'70}.{\i \'67\'65\'74\'54\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73}() = \'35);
+\par   {\i \'70}.{\i \'73\'65\'74\'55\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73}(\'33);
+\par   {\i \'41\'73\'73\'65\'72\'74\'54\'72\'75\'65}({\i \'70}.{\i \'67\'65\'74\'55\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73}() = \'33);
+\par   {\i \'70}.{\i \'64\'65\'63\'55\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73}();
+\par   {\i \'41\'73\'73\'65\'72\'74\'54\'72\'75\'65}({\i \'70}.{\i \'67\'65\'74\'55\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73}() = \'32);}
+\par }\pard \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid91024 \shading2000 {\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid15694333 \tab{\*\cs18\rtlch\af5\ltrch\f5   {\b return}
+\par       );
+\par 
+\par  {\b public} {\i \'54\'65\'73\'74\'52\'65\'73\'65\'74} : () ==> ()
+\par  {\i \'54\'65\'73\'74\'52\'65\'73\'65\'74}() ==
+\par  (}
+\par }\pard \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid15694333 \shading2000 {\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid15694333 \tab{\*\cs18\rtlch\af5\ltrch\f5   {\b dcl} {\i \'70} : {\i \'50\'6c\'61\'79\'65\'72} := {\b new} {\i \'50\'6c\'61\'79\'65\'72}(<\'57\'48\'49\'54\'45>);
+\par   {\i \'41\'73\'73\'65\'72\'74\'54\'72\'75\'65}({\i \'70}.{\i \'67\'65\'74\'54\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73}() = \'39);
+\par   {\i \'41\'73\'73\'65\'72\'74\'54\'72\'75\'65}({\i \'70}.{\i \'67\'65\'74\'55\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73}() = \'39);}
+\par }\pard \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid91024 \shading2000 {\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid15694333 \tab{\*\cs18\rtlch\af5\ltrch\f5   {\i \'70}.{\i \'73\'65\'74\'54\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73}(\'35);}
+\par }\pard \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid15694333 \shading2000 {\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid15694333 \tab{\*\cs18\rtlch\af5\ltrch\f5   {\i \'70}.{\i \'73\'65\'74\'55\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73}(\'35);
+\par   {\i \'41\'73\'73\'65\'72\'74\'54\'72\'75\'65}({\i \'70}.{\i \'67\'65\'74\'54\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73}() = \'35);
+\par   {\i \'41\'73\'73\'65\'72\'74\'54\'72\'75\'65}({\i \'70}.{\i \'67\'65\'74\'55\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73}() = \'35);
+\par   {\i \'70}.{\i \'72\'65\'73\'65\'74}();
+\par   {\i \'41\'73\'73\'65\'72\'74\'54\'72\'75\'65}({\i \'70}.{\i \'67\'65\'74\'54\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73}() = {\i \'50\'6c\'61\'79\'65\'72}`{\i \'54\'4f\'54\'41\'4c\'5f\'50\'49\'45\'43\'45\'53});}
+\par }\pard \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid91024 \shading2000 {\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid15694333 \tab{\*\cs18\rtlch\af5\ltrch\f5   {\i \'41\'73\'73\'65\'72\'74\'54\'72\'75\'65}({\i \'70}.{\i \'67\'65\'74\'55\'6e\'70\'6c\'61\'79\'65\'64\'50\'69\'65\'63\'65\'73}() = {\i \'50\'6c\'61\'79\'65\'72}`{\i \'54\'4f\'54\'41\'4c\'5f\'50\'49\'45\'43\'45\'53});
+\par   {\b return}
+\par  );
+\par 
+\par  {\b public} {\i \'54\'65\'73\'74\'48\'61\'73\'4c\'6f\'73\'74} : () ==> ()
+\par  {\i \'54\'65\'73\'74\'48\'61\'73\'4c\'6f\'73\'74}() ==
+\par  (
+\par   {\b dcl} {\i \'70} : {\i \'50\'6c\'61\'79\'65\'72} := {\b new} {\i \'50\'6c\'61\'79\'65\'72}(<\'42\'4c\'41\'43\'4b>);}
+\par }\pard \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid14241465 \shading2000 {\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14241465 \tab{\*\cs18\rtlch\af5\ltrch\f5   {\i \'41\'73\'73\'65\'72\'74\'54\'72\'75\'65}({\i \'70}.{\i \'67\'65\'74\'54\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73}() = \'39);}
+\par }\pard \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid91024 \shading2000 {\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14241465 \tab{\*\cs18\rtlch\af5\ltrch\f5   {\i \'70}.{\i \'73\'65\'74\'54\'6f\'74\'61\'6c\'50\'69\'65\'63\'65\'73}(\'32);
+\par   {\i \'41\'73\'73\'65\'72\'74\'54\'72\'75\'65}({\i \'70}.{\i \'6c\'6f\'73\'74}());
+\par   {\b return}
+\par  );
+\par 
+\par  {\b public} {\i \'54\'65\'73\'74\'50\'69\'65\'63\'65\'54\'79\'70\'65} : () ==> ()
+\par  {\i \'54\'65\'73\'74\'50\'69\'65\'63\'65\'54\'79\'70\'65}() ==
+\par  (
+\par   {\b dcl} {\i \'70} : {\i \'50\'6c\'61\'79\'65\'72} := {\b new} {\i \'50\'6c\'61\'79\'65\'72}(<\'42\'4c\'41\'43\'4b>);
+\par   {\i \'41\'73\'73\'65\'72\'74\'46\'61\'6c\'73\'65}({\i \'70}.{\i \'67\'65\'74\'50\'69\'65\'63\'65\'54\'79\'70\'65}() = <\'55\'4e\'44\'45\'46\'49\'4e\'45\'44>);
+\par   {\i \'41\'73\'73\'65\'72\'74\'54\'72\'75\'65}({\i \'70}.{\i \'67\'65\'74\'50\'69\'65\'63\'65\'54\'79\'70\'65}() = <\'42\'4c\'41\'43\'4b>);
+\par   {\i \'70}.{\i \'73\'65\'74\'50\'69\'65\'63\'65\'54\'79\'70\'65}(<\'57\'48\'49\'54\'45>);}
+\par }\pard \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid14241465 \shading2000 {\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14577971 \tab{\*\cs18\rtlch\af5\ltrch\f5   {\i \'41\'73\'73\'65\'72\'74\'54\'72\'75\'65}({\i \'70}.{\i \'67\'65\'74\'50\'69\'65\'63\'65\'54\'79\'70\'65}() = <\'57\'48\'49\'54\'45>);}
+\par }\pard \ltrpar\s17\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid91024 \shading2000 {\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid14241465 \tab{\*\cs18\rtlch\af5\ltrch\f5   {\b return}
+\par  );
+\par 
+\par  {\b public} {\i \'54\'65\'73\'74\'50\'6c\'61\'79\'65\'72\'4d\'69\'6c\'6c\'73} : () ==> ()
+\par  {\i \'54\'65\'73\'74\'50\'6c\'61\'79\'65\'72\'4d\'69\'6c\'6c\'73}() ==
+\par  (
+\par   {\b dcl} {\i \'70} : {\i \'50\'6c\'61\'79\'65\'72} := {\b new} {\i \'50\'6c\'61\'79\'65\'72}(<\'42\'4c\'41\'43\'4b>);
+\par   {\b dcl} {\i \'6d} : {\b set} {\b of} {\b set} {\b of} {\b seq} {\b of} {\b nat1} := \{\{[\'35,\'34] , [\'36,\'34], [\'37,\'34] \}\};
+\par   {\i \'41\'73\'73\'65\'72\'74\'54\'72\'75\'65}({\i \'70}.{\i \'67\'65\'74\'50\'69\'65\'63\'65\'54\'79\'70\'65}() = <\'42\'4c\'41\'43\'4b>);
+\par   {\i \'41\'73\'73\'65\'72\'74\'54\'72\'75\'65}({\i \'70}.{\i \'67\'65\'74\'4d\'69\'6c\'6c\'73}() = \{\});
+\par   {\i \'70}.{\i \'73\'65\'74\'4d\'69\'6c\'6c\'73}({\i \'6d});
+\par   {\i \'41\'73\'73\'65\'72\'74\'54\'72\'75\'65}({\i \'70}.{\i \'67\'65\'74\'4d\'69\'6c\'6c\'73}() = \{\{[\'35,\'34] , [\'36,\'34], [\'37,\'34] \}\});
+\par   {\b return}
+\par  );
+\par 
+\par 
+\par 
+\par {\b end} {\i \'54\'65\'73\'74\'50\'6c\'61\'79\'65\'72}}
 \par }\pard\plain \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 \fs20\lang1033\langfe2070\cgrid\langnp1033\langfenp2070 {\rtlch\fcs1 \af0 \ltrch\fcs0 
 \lang2057\langfe2070\langnp2057\insrsid4287903\charrsid13245581 
 \par }\pard\plain \ltrpar\s3\ql \li0\ri0\sb240\sa60\keepn\widctlpar\wrapdefault\aspalpha\aspnum\faauto\outlinelevel2\adjustright\rin0\lin0\itap0\pararsid11078918 \rtlch\fcs1 \ab\af1\afs26\alang1025 \ltrch\fcs0 
@@ -155,8 +137,30 @@ AssertTrue(p.getTotalPieces() = 9);
 \par }\pard\plain \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid11078918 \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 \fs20\lang1033\langfe2070\cgrid\langnp1033\langfenp2070 {\rtlch\fcs1 \af0 \ltrch\fcs0 
 \lang2057\langfe2070\langnp2057\insrsid11078918\charrsid13245581 
 \par }\pard\plain \ltrpar\s20\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid11078918 \shading2000 \rtlch\fcs1 \af2\afs20\alang1025 \ltrch\fcs0 \f2\fs20\lang1024\langfe1024\cgrid\noproof\langnp2070\langfenp2070 {
-\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid4666101 Test}{\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid9659661\charrsid4666101 Player}{\rtlch\fcs1 \af2 \ltrch\fcs0 
-\lang1024\langfe1024\langnp2057\insrsid11078918\charrsid4666101 
+\rtlch\fcs1 \af2 \ltrch\fcs0 \lang1024\langfe1024\langnp2057\insrsid4666101 
+\trowd \trgaph108\trrh112\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw30\brdrcf1 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx4536\clvertalt\clbrdrt\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx5529\clvertalt\clbrdrt\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx6663\pard\plain 
+\nowidctlpar\widctlpar\intbl\adjustright \fs20\cgrid {\b\i name\cell #calls\cell coverage\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\i\fs24\lang1030 \row }
+\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \clvertalt\clbrdrl
+\brdrs\brdrw10 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx4536\clvertalt\cltxlrtb \cellx5529\clvertalt\clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx6663\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24 \'54\'65\'73\'74\'50\'6c\'61\'79\'65\'72`\'54\'65\'73\'74\'52\'65\'73\'65\'74 \cell  1 \cell 100%\cell}\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24\lang1030 \row }\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24 \'54\'65\'73\'74\'50\'6c\'61\'79\'65\'72`\'41\'73\'73\'65\'72\'74\'54\'72\'75\'65 \cell  19 \cell 100%\cell}\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24\lang1030 \row }\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24 \'54\'65\'73\'74\'50\'6c\'61\'79\'65\'72`\'41\'73\'73\'65\'72\'74\'46\'61\'6c\'73\'65 \cell  1 \cell 100%\cell}\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24\lang1030 \row }\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24 \'54\'65\'73\'74\'50\'6c\'61\'79\'65\'72`\'54\'65\'73\'74\'48\'61\'73\'4c\'6f\'73\'74 \cell  1 \cell 100%\cell}\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24\lang1030 \row }\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24 \'54\'65\'73\'74\'50\'6c\'61\'79\'65\'72`\'54\'65\'73\'74\'50\'69\'65\'63\'65\'54\'79\'70\'65 \cell  1 \cell 100%\cell}\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24\lang1030 \row }\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24 \'54\'65\'73\'74\'50\'6c\'61\'79\'65\'72`\'54\'65\'73\'74\'50\'6c\'61\'79\'65\'72\'4d\'69\'6c\'6c\'73 \cell  1 \cell 100%\cell}\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24\lang1030 \row }\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24 \'54\'65\'73\'74\'50\'6c\'61\'79\'65\'72`\'54\'65\'73\'74\'49\'6e\'69\'74\'69\'61\'6c\'50\'69\'65\'63\'65\'73 \cell  1 \cell 100%\cell}\pard
+\nowidctlpar\widctlpar\intbl\adjustright {\fs24\lang1030 \row }\pard
+\nowidctlpar\widctlpar\intbl\adjustright \fs20\cgrid {\b\i\fs24\lang1030 total\cell \cell 100% \cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\i\fs24\lang1030 \row } \pard
+\nowidctlpar\widctlpar\adjustright{
+\par }
 \par }\pard\plain \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 \fs20\lang1033\langfe2070\cgrid\langnp1033\langfenp2070 {\rtlch\fcs1 \af0 \ltrch\fcs0 
 \lang2057\langfe2070\langnp2057\insrsid11078918\charrsid4666101 
 \par }}
