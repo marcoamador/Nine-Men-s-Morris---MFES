@@ -1,0 +1,17 @@
+ Tipo                   | Causa / local                                     ==> Solução
+
+Player
+ - state invariants     | na atribuição de valores                          ==> valores corretos assegurados por pré condições
+ - subtype              | na atribuição de valores com invariantes          ==> valores limite assegurados por pré condições
+
+Board
+ - sequence application | utilização de índices para acesso a sequences     ==> pré condições chamam validCoords, que não só assegura a validade das coordenadas como também que os índices usados são válidos
+ - post condition       | verificação da conteúdo da posição (put / remove) ==> pós condição verifica que o conteúdo da posição foi corretamente alterado
+ - map enumeration      | atribuição de valores hard coded em maps          ==> ?
+ - map appliation       | utilização de chaves para acesso a maps           ==> pré condições chamam validCoords, que não só assegura a validade das coordenadas / chaves usadas
+ - function application | parâmetros passados a funções                     ==> todas as funções asseguram a validade dos parâmetros que lhe são passados através das suas pré condições
+
+Game
+ - post conditions      | verificação dos valores de retorno de funções     ==> pós condições verificam se resultados gerados através de ciclos estão de acordo com o que seria esperado, a nível de conteúdo e estrutural
+ - state invariants     | na atribuição de valores                          ==> valores são atribuidos explicitamente, caso contrário pré e pós condições verificam se os valores são os esperados
+ - function application | parâmetros passados a funções                     ==> parâmetros corretos assegurados por pré condições da função pai, e também das funções chamadas

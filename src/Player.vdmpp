@@ -22,99 +22,86 @@ operations
   	totalPieces := TOTAL_PIECES;
   	unplayedPieces := TOTAL_PIECES;
   )
-  pre type <> <UNDEFINED>
-  post totalPieces = TOTAL_PIECES and unplayedPieces = TOTAL_PIECES and pieceType = type;
+  pre type <> <UNDEFINED>;
   
   public setMills : set of set of seq of nat1 ==> ()
   setMills(m) ==
   (
     mills := m;
-  )
-  post mills = m;
+  );
   
   public getMills : () ==> set of set of seq of nat1
   getMills() ==
   (
     return mills;
-  )
-  post RESULT = mills;
+  );
 
   public lost : () ==> bool
   lost() ==
   (
   	return totalPieces < 3;
-  )
-  post RESULT = (totalPieces < 3);
+  );
 
   public reset : () ==> ()
   reset() ==
   (
   	totalPieces := TOTAL_PIECES;
   	unplayedPieces := TOTAL_PIECES;
-  )
-  post totalPieces = TOTAL_PIECES and unplayedPieces = TOTAL_PIECES;
+  );
 
   public getPieceType : () ==> Board`PieceType
   getPieceType() ==
   (
   	return pieceType;
   )
-  pre pieceType <> <UNDEFINED>
-  post RESULT = pieceType;
+  pre pieceType <> <UNDEFINED>;
 
   public decTotalPieces : () ==> ()
   decTotalPieces() ==
   (
   	totalPieces := totalPieces - 1;
   )
-  pre totalPieces - 1 >= 0
-  post totalPieces >= 0;
+  pre totalPieces - 1 >= 0;
 
   public getTotalPieces : () ==> nat
   getTotalPieces() ==
   (
   	return totalPieces;
-  )
-  post RESULT = totalPieces;
+  );
 
   public setTotalPieces : nat ==> ()
   setTotalPieces(nPieces) ==
   (
   	totalPieces := nPieces;
   )
-  pre nPieces >= 0
-  post totalPieces = nPieces;
+  pre nPieces >= 0;
 
   public decUnplayedPieces : () ==> ()
   decUnplayedPieces() ==
   (
   	unplayedPieces := unplayedPieces - 1;
   )
-  pre unplayedPieces - 1 >= 0
-  post unplayedPieces >= 0;
+  pre unplayedPieces - 1 >= 0;
 
   public getUnplayedPieces : () ==> nat
   getUnplayedPieces() ==
   (
   	return unplayedPieces;
-  )
-  post RESULT = unplayedPieces;
+  );
 
   public setUnplayedPieces : nat ==> ()
   setUnplayedPieces(nPieces) ==
   (
   	unplayedPieces := nPieces;
   )
-  pre nPieces >= 0
-  post unplayedPieces = nPieces;
+  pre nPieces >= 0;
 
   public setPieceType : Board`PieceType ==> ()
   setPieceType(type) ==
   (
   	pieceType := type;
   )
-  pre type <> <UNDEFINED>
-  post pieceType = type;
+  pre type <> <UNDEFINED>;
 
 end Player
 

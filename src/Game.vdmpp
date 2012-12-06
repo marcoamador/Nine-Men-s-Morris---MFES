@@ -19,8 +19,7 @@ operations
     board := new Board();
     currentPieceType := <WHITE>;
     players := { new Player(<WHITE>), new Player(<BLACK>) };
-  )
-  post card players = 2 and currentPieceType = <WHITE> and isofclass(Board, board);
+  );
   
   public reset : () ==> ()
   reset() ==
@@ -28,8 +27,7 @@ operations
     board := new Board();
     currentPieceType := <WHITE>;
     players := { new Player(<WHITE>), new Player(<BLACK>) };
-  )
-  post currentPieceType = <WHITE> and card players = 2;
+  );
 
   public put : seq of nat1 ==> bool
   put(coord) ==
@@ -48,8 +46,7 @@ operations
   getBoard() ==
   (
   	return board;
-  )
-  post isofclass(Board, RESULT);
+  );
 
   public remove : seq of nat1 ==> ()
   remove(coord) ==
@@ -141,8 +138,7 @@ operations
   getCurrentPieceType() ==
   (
     return currentPieceType;
-  )
-  post RESULT = currentPieceType;
+  );
 
   public getUnplayedPieceCount : () ==> map Board`PieceType to nat
   getUnplayedPieceCount() ==
@@ -155,7 +151,7 @@ operations
     return count;
   )
   pre players <> {}
-  post dom RESULT <> {};
+  post dom RESULT <> {} and card dom RESULT = 2;
   
 end Game
 

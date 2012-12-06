@@ -49,8 +49,7 @@ operations
   getBoard() ==
   (
     return board;
-  )
-  post RESULT = board;
+  );
   
   public validCoords : seq of nat1 ==> bool
   validCoords(coord) ==
