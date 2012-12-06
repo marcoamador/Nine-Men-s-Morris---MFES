@@ -9,6 +9,7 @@ instance variables
   private board : Board;
   private players : set of Player;
   private currentPieceType : Board`PieceType;
+  inv currentPieceType <> <UNDEFINED>
 
 operations
 
@@ -18,7 +19,8 @@ operations
     board := new Board();
     currentPieceType := <WHITE>;
     players := { new Player(<WHITE>), new Player(<BLACK>) };
-  );
+  )
+  post card players = 2 and currentPieceType = <WHITE> and isofclass(Board, board);
   
   public reset : () ==> ()
   reset() ==
@@ -26,7 +28,8 @@ operations
     board := new Board();
     currentPieceType := <WHITE>;
     players := { new Player(<WHITE>), new Player(<BLACK>) };
-  );
+  )
+  post currentPieceType = <WHITE> and card players = 2;
 
   public put : seq of nat1 ==> bool
   put(coord) ==
@@ -38,13 +41,15 @@ operations
     mills := board.getMills(currentPieceType);
     player.setMills(mills);
     return card pMills < card mills;
-  );
+  )
+  pre board.validCoords(coord);
 
   public getBoard : () ==> Board
   getBoard() ==
   (
   	return board;
-  );
+  )
+  post isofclass(Board, RESULT);
 
   public remove : seq of nat1 ==> ()
   remove(coord) ==
@@ -53,7 +58,8 @@ operations
     changePlayer();
     getCurrentPlayer().setMills(board.getMills(currentPieceType));
     changePlayer();
-  );
+  )
+  pre board.validCoords(coord);
 
   public isPhaseOne : () ==> bool
   isPhaseOne() ==
@@ -91,20 +97,22 @@ operations
     return player;
   )
   pre players <> {}
-  post RESULT in set players;
+  post isofclass(Player, RESULT) and RESULT in set players;
 
   public move : seq of nat1 * seq of nat1 ==> bool
   move(origin, dest) ==
   (
     board.remove(origin);
     return put(dest);
-  );
+  )
+  pre board.validCoords(origin) and board.validCoords(dest);
 
   public puttable : seq of nat1 ==> bool
   puttable(coord) ==
   (
     board.puttable(coord);
-  );
+  )
+  pre board.validCoords(coord);
 
   public changePlayer : () ==> ()
   changePlayer() ==
@@ -112,23 +120,29 @@ operations
     if currentPieceType = <WHITE>
     then currentPieceType := <BLACK>
     else currentPieceType := <WHITE>;
-  );
+  )
+  post currentPieceType <> <UNDEFINED>;
 
   public removable : seq of nat1 ==> bool
   removable(coord) ==
   (
     return board.removable(currentPieceType, coord);
-  );
+  )
+  pre board.validCoords(coord);
 
   public movable : seq of nat1 * seq of nat1 ==> bool
   movable(origin, dest) ==
   (
     return board.movable(currentPieceType, origin, dest);
-  );
+  )
+  pre board.validCoords(origin) and board.validCoords(dest);
 
   public getCurrentPieceType : () ==> Board`PieceType
   getCurrentPieceType() ==
+  (
     return currentPieceType;
+  )
+  post RESULT = currentPieceType;
 
   public getUnplayedPieceCount : () ==> map Board`PieceType to nat
   getUnplayedPieceCount() ==
@@ -142,6 +156,7 @@ operations
   )
   pre players <> {}
   post dom RESULT <> {};
+  
 end Game
 
 
