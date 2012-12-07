@@ -194,7 +194,7 @@ public class MainPanel extends JPanel {
 		while(it.hasNext()) {
 			Entry entry = (Entry) it.next();
 			Vector<Integer> vec = (Vector<Integer>) entry.getKey();
-			places.put(vec, drawCircle(50 + vec.get(1) * 77, vec.get(0) * 77, 25f, 20));
+			places.put(vec, drawCircle(50 + vec.get(1) * 77, vec.get(0) * 77, 25f, 6));
 		}
 	}
 	
@@ -202,8 +202,8 @@ public class MainPanel extends JPanel {
 		blackUnplayed = new ArrayList<Polygon>();
 		whiteUnplayed = new ArrayList<Polygon>();
 		for(int i = 0; i < Player.TOTAL_uPIECES; ++i) {
-			whiteUnplayed.add(drawCircle(50, 100 + 50 * i, 25f, 20));
-			blackUnplayed.add(drawCircle(background.getWidth() - 50, 100 + 50 * i, 25f, 20));
+			whiteUnplayed.add(drawCircle(50, 100 + 50 * i, 25f, 6));
+			blackUnplayed.add(drawCircle(background.getWidth() - 50, 100 + 50 * i, 25f, 6));
 		}
 	}
 	
